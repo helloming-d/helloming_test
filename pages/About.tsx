@@ -6,8 +6,8 @@ import { Link } from 'react-router-dom';
 const About: React.FC = () => {
   return (
     <div className="bg-white overflow-hidden">
-      {/* Unified Cinematic Hero Section */}
-      <header className="relative min-h-[80vh] flex items-center bg-slate-950 text-white px-8 pt-20 overflow-hidden">
+      {/* Standardized Cinematic Hero Section - Increased pt-52 */}
+      <header className="relative min-h-[85vh] flex items-center bg-slate-950 text-white px-8 pt-52 pb-20 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_20%_30%,rgba(250,204,21,0.08),transparent_50%)]" />
           <div className="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(circle_at_80%_70%,rgba(250,204,21,0.05),transparent_50%)]" />
@@ -15,26 +15,22 @@ const About: React.FC = () => {
         </div>
 
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap opacity-[0.03] select-none pointer-events-none w-full text-center">
-          <span className="text-[30rem] font-black leading-none uppercase tracking-tighter">STUDIO</span>
+          <span className="text-[25vw] font-black leading-none uppercase tracking-tighter">STUDIO</span>
         </div>
 
         <div className="max-w-7xl mx-auto relative z-10 w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-            <div className="lg:col-span-8">
-              <div className="inline-flex items-center gap-3 px-6 py-2 rounded-full border border-slate-800 bg-slate-900/80 backdrop-blur-xl text-yellow-400 text-xs font-black tracking-[0.4em] mb-12 uppercase animate-in fade-in slide-in-from-left duration-700">
-                <Sparkles size={14} /> Beyond Aesthetics
-              </div>
-              <h1 className="text-7xl md:text-[140px] font-black mb-12 tracking-tighter leading-[0.85] uppercase animate-in fade-in slide-in-from-bottom duration-1000 delay-200">
-                DESIGN IS <br />
-                <span className="text-yellow-400 italic">STRATEGY.</span>
-              </h1>
-              <p className="text-2xl md:text-3xl text-slate-400 max-w-3xl font-medium leading-relaxed animate-in fade-in slide-in-from-bottom duration-1000 delay-400">
-                헬로밍은 단순히 예쁜 그림을 그리는 곳이 아닙니다. <br />
-                비즈니스의 본질을 꿰뚫는 시각적 언어로 <br />
-                브랜드의 미래를 설계하는 디자인 파트너입니다.
-              </p>
-            </div>
+          <div className="inline-flex items-center gap-3 px-6 py-2.5 rounded-full border border-slate-800 bg-slate-900/80 backdrop-blur-xl text-yellow-400 text-[11px] font-black tracking-[0.4em] mb-12 uppercase animate-in fade-in slide-in-from-left duration-700">
+            <Sparkles size={14} /> Beyond Aesthetics
           </div>
+          <h1 className="text-7xl md:text-[140px] font-black mb-12 tracking-tighter leading-[0.85] uppercase animate-in fade-in slide-in-from-bottom duration-1000 delay-200">
+            DESIGN IS <br />
+            <span className="text-yellow-400 italic">STRATEGY.</span>
+          </h1>
+          <p className="text-2xl md:text-3xl text-slate-400 max-w-3xl font-medium leading-relaxed animate-in fade-in slide-in-from-bottom duration-1000 delay-400">
+            헬로밍은 단순히 예쁜 그림을 그리는 곳이 아닙니다. <br />
+            비즈니스의 본질을 꿰뚫는 시각적 언어로 <br />
+            브랜드의 미래를 설계하는 디자인 파트너입니다.
+          </p>
         </div>
       </header>
 

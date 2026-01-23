@@ -12,8 +12,8 @@ interface HomeProps {
 const Home: React.FC<HomeProps> = ({ portfolio }) => {
   return (
     <div className="overflow-hidden">
-      {/* Cinematic Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center bg-slate-950 px-6 py-20 overflow-hidden">
+      {/* Increased pt-52 for a more spacious entrance */}
+      <section className="relative min-h-screen flex items-center justify-center bg-slate-950 px-6 pt-52 pb-20 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_20%_30%,rgba(250,204,21,0.08),transparent_50%)]" />
           <div className="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(circle_at_80%_70%,rgba(250,204,21,0.05),transparent_50%)]" />
@@ -23,7 +23,7 @@ const Home: React.FC<HomeProps> = ({ portfolio }) => {
         <div className="max-w-7xl mx-auto w-full relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
             <div className="lg:col-span-7 text-left order-2 lg:order-1">
-              <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-slate-800 bg-slate-900/80 backdrop-blur-xl text-yellow-400 text-xs font-black tracking-[0.3em] mb-8 uppercase animate-in fade-in slide-in-from-left duration-700">
+              <div className="inline-flex items-center gap-3 px-6 py-2.5 rounded-full border border-slate-800 bg-slate-900/80 backdrop-blur-xl text-yellow-400 text-[11px] font-black tracking-[0.4em] mb-12 uppercase animate-in fade-in slide-in-from-left duration-700">
                 <Sparkles size={14} /> 8 Years of Excellence
               </div>
               

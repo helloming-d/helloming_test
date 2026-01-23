@@ -24,26 +24,26 @@ const Works: React.FC<WorksProps> = ({ portfolio }) => {
 
   return (
     <div className="bg-white min-h-screen overflow-hidden">
-      {/* Unified Cinematic Hero Section */}
-      <header className="relative min-h-[80vh] flex items-center bg-slate-950 text-white px-8 pt-20 overflow-hidden">
+      {/* Standardized Cinematic Hero Section - Increased pt-52 */}
+      <header className="relative min-h-[85vh] flex items-center bg-slate-950 text-white px-8 pt-52 pb-20 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_80%_20%,rgba(250,204,21,0.1),transparent_50%)]" />
           <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]" />
         </div>
         
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap opacity-[0.03] select-none pointer-events-none w-full text-center">
-          <span className="text-[30rem] font-black leading-none uppercase tracking-tighter">ARCHIVE</span>
+          <span className="text-[25vw] font-black leading-none uppercase tracking-tighter">ARCHIVE</span>
         </div>
 
         <div className="max-w-7xl mx-auto relative z-10 w-full">
           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-12">
             <div>
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-slate-800 bg-slate-900/80 text-yellow-400 text-[10px] font-black tracking-[0.4em] mb-8 uppercase">
-                <Filter size={12} /> Curated Selection
+              <div className="inline-flex items-center gap-3 px-6 py-2.5 rounded-full border border-slate-800 bg-slate-900/80 backdrop-blur-xl text-yellow-400 text-[11px] font-black tracking-[0.4em] mb-12 uppercase animate-in fade-in slide-in-from-left duration-700">
+                <Filter size={14} /> Curated Selection
               </div>
               <h1 className="text-7xl md:text-[140px] font-black leading-[0.85] tracking-tighter uppercase mb-8">
-                THE<br />
-                <span className="text-yellow-400">ARCHIVE.</span>
+                SELECTED<br />
+                <span className="text-yellow-400 italic">WORKS.</span>
               </h1>
               <p className="text-2xl text-slate-400 font-medium leading-relaxed max-w-2xl">
                 헬로밍의 철학과 감각이 담긴 프로젝트 결과물입니다. <br />

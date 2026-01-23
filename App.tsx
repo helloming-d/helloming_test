@@ -46,7 +46,8 @@ const App: React.FC = () => {
       <div className="flex flex-col min-h-screen">
         <Navbar />
         
-        <main className="flex-grow pt-16">
+        {/* Adjusted pt-24 to clear the fixed h-24 navbar correctly */}
+        <main className="flex-grow pt-24">
           <Routes>
             <Route path="/" element={<Home portfolio={portfolio.slice(0, 4)} />} />
             <Route path="/about" element={<About />} />

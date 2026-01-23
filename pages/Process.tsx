@@ -23,8 +23,8 @@ const processImages = [
 const Process: React.FC = () => {
   return (
     <div className="bg-white min-h-screen">
-      {/* Unified Cinematic Hero Section */}
-      <header className="relative min-h-[80vh] flex items-center bg-slate-950 text-white px-8 pt-20 overflow-hidden">
+      {/* Standardized Cinematic Hero Section - Increased pt-52 */}
+      <header className="relative min-h-[85vh] flex items-center bg-slate-950 text-white px-8 pt-52 pb-20 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_20%_30%,rgba(250,204,21,0.08),transparent_50%)]" />
           <div className="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(circle_at_80%_70%,rgba(250,204,21,0.05),transparent_50%)]" />
@@ -32,19 +32,18 @@ const Process: React.FC = () => {
         </div>
 
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap opacity-[0.03] select-none pointer-events-none w-full text-center">
-          <span className="text-[30rem] font-black leading-none uppercase tracking-tighter">FLOW</span>
+          <span className="text-[25vw] font-black leading-none uppercase tracking-tighter">FLOW</span>
         </div>
 
         <div className="max-w-7xl mx-auto relative z-10 w-full">
           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-12">
             <div>
-              <div className="flex items-center gap-3 mb-8">
-                <span className="w-12 h-px bg-yellow-400" />
-                <span className="text-yellow-400 font-black tracking-[0.4em] text-xs uppercase">Workflow Strategy</span>
+              <div className="inline-flex items-center gap-3 px-6 py-2.5 rounded-full border border-slate-800 bg-slate-900/80 backdrop-blur-xl text-yellow-400 text-[11px] font-black tracking-[0.4em] mb-12 uppercase animate-in fade-in slide-in-from-left duration-700">
+                <Zap size={14} /> Workflow Strategy
               </div>
               <h1 className="text-7xl md:text-[140px] font-black leading-[0.85] tracking-tighter text-white uppercase mb-8">
                 THE <br />
-                <span className="text-yellow-400">PROCESS.</span>
+                <span className="text-yellow-400 italic">PROCESS.</span>
               </h1>
               <p className="text-2xl text-slate-400 font-medium leading-relaxed max-w-2xl">
                 헬로밍의 디자인은 철저한 분석에서 시작됩니다. <br />
@@ -100,9 +99,8 @@ const Process: React.FC = () => {
         </div>
       </section>
 
-      {/* Redesigned Trust & Policy Section with Light Gray Background */}
+      {/* Trust & Policy Section */}
       <section className="py-60 px-8 bg-slate-50 relative overflow-hidden border-y border-slate-100">
-        {/* Background Decorative Typography */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap opacity-[0.03] select-none pointer-events-none">
           <span className="text-[40rem] font-black leading-none uppercase tracking-tighter text-slate-950">TRUST</span>
         </div>
@@ -158,7 +156,6 @@ const Process: React.FC = () => {
                     <p className="text-lg text-slate-500 leading-relaxed font-medium">
                       {item.desc}
                     </p>
-                    {/* Corner Accent */}
                     <div className="absolute top-8 right-8 w-2 h-2 bg-slate-100 rounded-full group-hover:bg-yellow-400 group-hover:scale-150 transition-all duration-500" />
                   </div>
                 ))}
