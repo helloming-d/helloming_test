@@ -50,7 +50,7 @@ const Contact: React.FC = () => {
 
   return (
     <div className="bg-white min-h-screen">
-      {/* Standardized Cinematic Hero Section - Increased pt-52 */}
+      {/* Increased pt-52 and maintained for consistency */}
       <header className="relative min-h-[85vh] flex items-center bg-slate-950 text-white px-8 pt-52 pb-20 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_20%_30%,rgba(250,204,21,0.08),transparent_50%)]" />
@@ -83,11 +83,11 @@ const Contact: React.FC = () => {
             <div>
               <h2 className="text-4xl font-black mb-12 tracking-tighter uppercase">QUICK CHAT</h2>
               <div className="space-y-6">
-                <a href="https://open.kakao.com" target="_blank" className="flex items-center gap-6 group p-8 bg-yellow-400 rounded-[40px] transition-all hover:scale-105">
+                <a href="http://pf.kakao.com/_MeShX/chat" target="_blank" className="flex items-center gap-6 group p-8 bg-yellow-400 rounded-[40px] transition-all hover:scale-105">
                   <div className="w-16 h-16 bg-slate-950 rounded-2xl flex items-center justify-center text-yellow-400"><MessageCircle size={32} /></div>
                   <div>
                     <p className="text-xs font-black text-slate-900 uppercase tracking-widest opacity-60 mb-1">KakaoTalk</p>
-                    <p className="text-slate-950 font-black text-2xl">@helloming</p>
+                    <p className="text-slate-950 font-black text-2xl">헬로밍</p>
                   </div>
                 </a>
                 <a href="mailto:design@helloming.com" className="flex items-center gap-6 group p-8 bg-slate-50 rounded-[40px] border border-slate-100 transition-all hover:bg-slate-100">

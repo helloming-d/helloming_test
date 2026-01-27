@@ -46,7 +46,7 @@ const App: React.FC = () => {
       <div className="flex flex-col min-h-screen">
         <Navbar />
         
-        {/* Adjusted pt-24 to clear the fixed h-24 navbar correctly */}
+        {/* pt-24 ensures the fixed navbar (h-24) doesn't overlap content on load */}
         <main className="flex-grow pt-24">
           <Routes>
             <Route path="/" element={<Home portfolio={portfolio.slice(0, 4)} />} />
@@ -66,7 +66,7 @@ const App: React.FC = () => {
         
         {/* Floating Contact Buttons for Mobile */}
         <div className="fixed bottom-6 right-6 flex flex-col gap-3 z-50 md:hidden">
-          <a href="https://open.kakao.com" target="_blank" rel="noreferrer" className="bg-yellow-400 p-4 rounded-full shadow-lg text-slate-900 transition-transform hover:scale-110 active:scale-95">
+          <a href="http://pf.kakao.com/_MeShX/chat" target="_blank" rel="noreferrer" className="bg-yellow-400 p-4 rounded-full shadow-lg text-slate-900 transition-transform hover:scale-110 active:scale-95">
             <MessageCircle size={24} />
           </a>
         </div>
