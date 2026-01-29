@@ -34,7 +34,7 @@ const Footer: React.FC = () => {
         <div>
           <h4 className="font-bold text-lg mb-6">Contact</h4>
           <ul className="space-y-4 text-slate-400">
-            <li>Email: design@helloming.com</li>
+            <li className="whitespace-nowrap text-sm sm:text-base pr-4">Email: hello--ming@naver.com</li>
             <li>Kakao: 헬로밍</li>
             <li>Time: 10:00 - 18:00 (Weekday)</li>
           </ul>

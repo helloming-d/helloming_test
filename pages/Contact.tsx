@@ -1,21 +1,46 @@
 
 import React, { useState } from 'react';
-import { Mail, MessageCircle, Send, CheckCircle2, Sparkles } from 'lucide-react';
+import { Mail, MessageCircle, Send, CheckCircle2, Sparkles, Loader2 } from 'lucide-react';
 
 const Contact: React.FC = () => {
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
-    email: '',
     phone: '',
     service: 'LOGO',
-    content: '',
-    refLink: ''
+    content: ''
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch('https://formspree.io/f/xpqdoqpj', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          phone: formData.phone,
+          service: formData.service,
+          message: formData.content
+        })
+      });
+
+      if (response.ok) {
+        setSubmitted(true);
+      } else {
+        alert('문의 전송 중 오류가 발생했습니다. 잠시 후 다시 시도해주세요.');
+      }
+    } catch (error) {
+      console.error('Submission error:', error);
+      alert('네트워크 오류가 발생했습니다. 인터넷 연결을 확인해주세요.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -50,7 +75,6 @@ const Contact: React.FC = () => {
 
   return (
     <div className="bg-white min-h-screen">
-      {/* Increased pt-52 and maintained for consistency */}
       <header className="relative min-h-[85vh] flex items-center bg-slate-950 text-white px-8 pt-52 pb-20 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_20%_30%,rgba(250,204,21,0.08),transparent_50%)]" />
@@ -84,17 +108,19 @@ const Contact: React.FC = () => {
               <h2 className="text-4xl font-black mb-12 tracking-tighter uppercase">QUICK CHAT</h2>
               <div className="space-y-6">
                 <a href="http://pf.kakao.com/_MeShX/chat" target="_blank" className="flex items-center gap-6 group p-8 bg-yellow-400 rounded-[40px] transition-all hover:scale-105">
-                  <div className="w-16 h-16 bg-slate-950 rounded-2xl flex items-center justify-center text-yellow-400"><MessageCircle size={32} /></div>
+                  <div className="w-16 h-16 bg-slate-950 rounded-2xl flex items-center justify-center text-yellow-400 flex-shrink-0"><MessageCircle size={32} /></div>
                   <div>
                     <p className="text-xs font-black text-slate-900 uppercase tracking-widest opacity-60 mb-1">KakaoTalk</p>
                     <p className="text-slate-950 font-black text-2xl">헬로밍</p>
                   </div>
                 </a>
-                <a href="mailto:design@helloming.com" className="flex items-center gap-6 group p-8 bg-slate-50 rounded-[40px] border border-slate-100 transition-all hover:bg-slate-100">
-                  <div className="w-16 h-16 bg-slate-950 rounded-2xl flex items-center justify-center text-white"><Mail size={32} /></div>
-                  <div>
+                <a href="mailto:hello--ming@naver.com" className="flex items-center gap-6 group p-8 bg-slate-50 rounded-[40px] border border-slate-100 transition-all hover:bg-slate-100 overflow-hidden">
+                  <div className="w-16 h-16 bg-slate-950 rounded-2xl flex items-center justify-center text-white flex-shrink-0"><Mail size={32} /></div>
+                  <div className="flex-1 min-w-0 pr-4">
                     <p className="text-xs font-black text-slate-400 uppercase tracking-widest mb-1">Email</p>
-                    <p className="text-slate-900 font-black text-xl">design@helloming.com</p>
+                    <p className="text-slate-900 font-black text-base sm:text-lg whitespace-nowrap overflow-visible">
+                      hello--ming@naver.com
+                    </p>
                   </div>
                 </a>
               </div>
@@ -136,8 +162,20 @@ const Contact: React.FC = () => {
                   <label htmlFor="content" className="block text-sm font-black text-slate-400 uppercase tracking-widest">Message Content *</label>
                   <textarea id="content" required rows={6} className="w-full px-8 py-6 bg-slate-50 border-transparent rounded-4xl focus:bg-white focus:ring-4 focus:ring-yellow-400 outline-none transition-all font-bold text-xl" placeholder="프로젝트의 목적, 희망 작업 분량 및 마감일 등을 상세히 적어주세요." value={formData.content} onChange={handleChange}></textarea>
                 </div>
-                <button type="submit" className="w-full bg-slate-950 text-white py-8 rounded-3xl font-black text-2xl flex items-center justify-center gap-4 hover:bg-slate-800 transition-all shadow-2xl group uppercase tracking-widest">
-                  SEND MESSAGE <Send size={28} className="group-hover:translate-x-2 transition-transform" />
+                <button 
+                  type="submit" 
+                  disabled={isSubmitting}
+                  className={`w-full bg-slate-950 text-white py-8 rounded-3xl font-black text-2xl flex items-center justify-center gap-4 hover:bg-slate-800 transition-all shadow-2xl group uppercase tracking-widest ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
+                >
+                  {isSubmitting ? (
+                    <>
+                      SENDING... <Loader2 className="animate-spin" size={28} />
+                    </>
+                  ) : (
+                    <>
+                      SEND MESSAGE <Send size={28} className="group-hover:translate-x-2 transition-transform" />
+                    </>
+                  )}
                 </button>
               </form>
             </div>
